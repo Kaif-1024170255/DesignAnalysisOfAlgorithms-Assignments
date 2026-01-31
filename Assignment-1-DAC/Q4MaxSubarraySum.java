@@ -13,8 +13,12 @@ public class Q4MaxSubarraySum {
     }
     // O(n)
     public static int getMaxSubarraySum2(int arr[]){
-        int maxSum=Integer.MIN_VALUE;
-        
+        int maxSum=arr[0];
+        int sum=arr[0];
+        for(int i=0;i<arr.length;i++){
+            sum=Math.max(arr[i],sum+arr[i]);
+            maxSum=Math.max(maxSum,sum);
+        }
         return maxSum;
     }
     public static void main(String[] args) {
